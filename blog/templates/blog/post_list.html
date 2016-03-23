@@ -13,11 +13,13 @@
 	</div>
 	
 	<div class="content">
-	<ul>
-		<li>One</li>
-		<li>Two</li>
-	</ul>
-	<p> Hello! It's me.</p>
+	{% for post in posts %}
+	<div>
+		<p>Published: {{ post.published.date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaks }}</p>
+	</div>
+	{% endfor %}
 	</div>
 	
 </body>
